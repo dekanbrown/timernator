@@ -1,4 +1,0 @@
-timernator
-==========
-
-js timer
