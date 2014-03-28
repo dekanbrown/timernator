@@ -1,0 +1,30 @@
+body {
+    position: relative;
+    height: 100%;
+}
+.t_group {
+    position: absolute;
+    z-index: 100;
+}
+.start_btn {
+
+    border: 1px solid black;
+    top:0px;
+    left:300px;
+    width:100px;
+    height:100px;
+    background-color: #47B1C2;
+    position: absolute;
+    z-index: 1;
+}
+.pause_btn {
+
+    border: 1px solid black;
+    top:0px;
+    left:420px;
+    width:100px;
+    height:100px;
+    background-color: #E7B1C2;
+    position: absolute;
+    z-index: 2;
+}
