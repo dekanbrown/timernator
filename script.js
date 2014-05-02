@@ -1,27 +1,44 @@
-ColorTimer = function () {
+ColorTimer = function (start_color, end_color) {
     //public vars
-    this.start_color = '#47B1C2';
-    this.end_color = '#E0004F';
+    this.start_color = start_color;
+    this.end_color = end_color;
     this.time_length = 0;
     this.cur_time = 0;
     this.interval = 1000;
     //public state vars
     this.ticking = false;
-    this.stopped = false;
+    this.expiered = false;
+    this.reset = true;
     this.paused = false;
     //private vars
     var pause_color = '#000000';
     var pause_time = 0;
     var timer_id = 0
     var this_object
+    
+    this.remove_transition = function (bg_color) {
+    console.log('remove trans');
+       $('body').css({
+            'transition' : 'background-color 1ms ease'
+        });
+        $('body').css({'background-color' : bg_color });
+    }
+    this.create_transition = function (time_to) {
+    console.log('create trans');
+        $('body').css({
+            'transition' : 'background-color ' + time_to + 's ease'
+        });
+        $('body').css({'background-color' : this.end_color });
+    }
     // Event: Tick
     this.Tick = function () {
         this.cur_time -= 1;
         console.log(this.cur_time + ' cur');
 
         if (this.cur_time <= 0) {
-            console.log('boom');
-            this.stop_reset();
+            
+            this.expire();
+            
         }
 
     }
@@ -52,31 +69,41 @@ ColorTimer = function () {
                 this_object.Tick(); 
             }, this.interval);
         // set state to ticking
+        this.ticking_state();
         this.ticking = true;
         // change the css transition length and set new background color
-        $('body').css({
-            'transition' : 'background-color ' + this.time_length + 's ease'
-        });
-        $('body').css({'background-color' : this.end_color });
+        this.create_transition (this.time_length)
+        
         
     };
-     // Function: stops and resets the timer
-    this.stop_reset = function () {
+     //  expires
+    this.expire = function () {
+        console.log('boom');
+        this.expired_state();
+        this.paused = false
         this.ticking = false;
-        this.stopped = true;
+        this.expired = true;
         clearInterval(timer_id);
+        console.log('expire');
+    };
+         // resets the timer
+    this.reset = function () {
+        
+        this.expire();
         console.log('reset');
+        
+        this.initial_state();
         // reset current time to total time
         this.cur_time = this.time_length;
+        console.log(this.time_length + " **************")
         //change transition to 1ms and set background color to start color
-        $('body').css({
-            'transition' : 'background-color 1ms ease'
-        });
-        $('body').css({'background-color' : this.start_color });
+        this.remove_transition(this.start_color);
+        
     };
      // Function: Pause the timer
     this.pause = function () {
         // if not ticking return false
+        this.paused_state();
         if (this.ticking == false)
         {
             return false;
@@ -89,28 +116,68 @@ ColorTimer = function () {
         // get current color and
         // change transition to 1ms and set background color to current color color
         pause_color = $('body').css('backgroundColor');
-        $('body').css({
-            'transition' : 'background-color 1ms ease'
-        });
-        $('body').css({'background-color' : pause_color });
+        this.remove_transition(pause_color);
         
     };
+    
+    //states
+    this.initial_state = function () {
+
+
+        $('body').css({'background-color' : this.start_color });
+        $('.t_group_input').show();
+        $('.t_group_cur').hide();
+        $('.start_btn').show();
+        $('.pause_btn').hide();
+        $('.reset_btn').hide();
+
+    };
+    this.paused_state = function () {
+        $('.t_group_input').hide();
+        $('.t_group_cur').show();
+        $('.t_cur').html(this.cur_time);
+        $('.start_btn').show();
+        $('.pause_btn').hide();
+        $('.reset_btn').show();
+
+    };
+    this.ticking_state = function () {
+        $('.t_group_input').hide();
+        $('.t_group_cur').hide();
+        $('.start_btn').hide();
+        $('.pause_btn').show();
+        $('.reset_btn').show();
+
+    };
+    this.expired_state = function () {
+        $('.t_group_input').hide();
+        $('.start_btn').hide();
+        $('.pause_btn').hide();
+        $('.reset_btn').show();
+        $('.t_group_cur').show();
+        $('.t_cur').html('00');
+
+    };
+    
  }
 
 $( document ).ready(function() {
 
     // create colorTimer
-    var obj = new ColorTimer();
+    var obj = new ColorTimer('#1FCB4A', '#E0004F');
     // set initial background color
-    $('body').css({'background-color' : obj.start_color });
-
-    //control buttons
-    $( ".start_btn" ).on('click',function() {
-      console.log( "clicked start" );
-      obj.start();
-    });
-    $( ".pause_btn" ).on('click',function() {
-      console.log( "clicked pause" );
-      obj.pause();
-    });
+    obj.initial_state()
+               //control buttons
+            $( ".start_btn" ).on('click',function() {
+              console.log( "clicked start" );
+              obj.start();
+            });
+            $( ".pause_btn" ).on('click',function() {
+              console.log( "clicked pause" );
+              obj.pause();
+            });
+            $( ".reset_btn" ).on('click',function() {
+              console.log( "clicked reset" );
+              obj.reset();
+            });
 });
