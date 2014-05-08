@@ -122,14 +122,14 @@ ColorTimer = function (start_color, end_color) {
     
     //states
     this.initial_state = function () {
-
-
         $('body').css({'background-color' : this.start_color });
         $('.t_group_input').show();
         $('.t_group_cur').hide();
         $('.start_btn').show();
         $('.pause_btn').hide();
         $('.reset_btn').hide();
+        $('body').removeAttr('class');
+        $('body').addClass('pattern_box');
 
     };
     this.paused_state = function () {
@@ -139,6 +139,7 @@ ColorTimer = function (start_color, end_color) {
         $('.start_btn').show();
         $('.pause_btn').hide();
         $('.reset_btn').show();
+        $('body').removeAttr('class');
 
     };
     this.ticking_state = function () {
@@ -147,6 +148,7 @@ ColorTimer = function (start_color, end_color) {
         $('.start_btn').hide();
         $('.pause_btn').show();
         $('.reset_btn').show();
+        $('body').removeAttr('class');
 
     };
     this.expired_state = function () {
@@ -156,6 +158,8 @@ ColorTimer = function (start_color, end_color) {
         $('.reset_btn').show();
         $('.t_group_cur').show();
         $('.t_cur').html('00');
+        $('body').removeAttr('class');
+        $('body').addClass('pattern_diag');
 
     };
     
@@ -164,7 +168,7 @@ ColorTimer = function (start_color, end_color) {
 $( document ).ready(function() {
 
     // create colorTimer
-    var obj = new ColorTimer('#1FCB4A', '#E0004F');
+    var obj = new ColorTimer('#74B486', '#FF0022');
     // set initial background color
     obj.initial_state()
                //control buttons

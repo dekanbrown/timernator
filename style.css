@@ -1,52 +1,10 @@
-body {
-    position: relative;
-    height: 100%;
-     font-size:25px;
+.pattern_diag {
+background:url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2NkQAX/GZH4/4FsRpgAmAOSBBFwDkgAAIKuBATRTAAZAAAAAElFTkSuQmCC
+   ) repeat;
 }
-.t_group_input {
-    position: absolute;
-    z-index: 100;
- 
-}
-
-#t_in {
-display: inline-block;
-width: 50px;
-    font-size:25px;
-}
-p {
-display: inline;
-}
-.start_btn {
-
-    border: 1px solid black;
-    top:0px;
-    left:0px;
-    width:100%;
-    height:100%;
-
-    position: absolute;
-    z-index: 1;
-}
-.pause_btn {
-
-    border: 1px solid black;
-    top:0px;
-    left:0px;
-    width:100%;
-    height:100%;
- 
-    position: absolute;
-    z-index: 2;
-}
-.reset_btn {
-
-    border: 1px solid black;
-    top:50px;
-    left:0px;
-    width:25px;
-    text-align: right;
-    background-color: #ffff22;
-    position: absolute;
-    z-index: 3;
+.pattern_box {
+background:url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAUElEQVQYV2NkYGAwBuKzQAwDID4IoIgxIikAMZE1oRiArBDdZBSNMIXoJiFbDZYDKcSmCOYimDuNSVKIzRNYrUYOFuQgweoZbIoxgoeoAAcAEckW11HVTfcAAAAASUVORK5CYII=
+   ) repeat;
 }

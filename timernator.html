@@ -2,23 +2,60 @@
 <head>
 <title>Timernator X</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-<div class="start_btn"></div>
-<div class="pause_btn"></div>
-<div class="reset_btn">R</div>
+<div class="container">
 
-<div class="t_group_input">
-<p>SEC&nbsp;</p>
-<input  type="number" id="t_in" value="5" />
-</div>
+<div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
 
-<div class="t_group_cur">
-<p>SEC&nbsp;</p>
-<p class="t_cur">00</p>
+          </div>
+          <div class="navbar-collapse collapse" style="height: 1px;">
+            <ul class="nav navbar-nav">
+              <li><a href="#">Timernator X</a></li>
+              <li><a class="start_btn">Start</a></li>
+              <li><a class="pause_btn">Pause</a></li>
+              <li>
+                <a class="reset_btn">
+                  <span class="sr-only">Reset</span>
+                  <span class="glyphicon glyphicon-off"></span>
+                </a>
+              <li>
+              <li class="t_group_input">
+                <input  type="number" id="t_in" value="5" />
+              </li>
+              <li class="t_group_cur">
+                <span class="t_cur">00</span>
+              </li>
+              <li><a class="start_color">Start Color</a></li>
+              <li><a class="end_color">End Color</a></li>
+              <li><a>State:</a></li>
+              <li><a>Progress:</a></li>
+            </ul>
+
+
+
+
+            
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
+
+
+
 </div>
 </body>
 
