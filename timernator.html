@@ -10,53 +10,52 @@
 
 <body>
 <div class="container">
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+  <div class="nav navbar-header">
 
-<div class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+    <a class="settings_btn" type="button" data-toggle="collapse" data-target=".menu-collapse">
+      <span class="glyphicon glyphicon-align-justify"></span>
 
-          </div>
-          <div class="navbar-collapse collapse" style="height: 1px;">
-            <ul class="nav navbar-nav">
-              <li><a href="#">Timernator X</a></li>
-              <li><a class="start_btn">Start</a></li>
-              <li><a class="pause_btn">Pause</a></li>
-              <li>
-                <a class="reset_btn">
-                  <span class="sr-only">Reset</span>
-                  <span class="glyphicon glyphicon-off"></span>
-                </a>
-              <li>
-              <li class="t_group_input">
-                <input  type="number" id="t_in" value="5" />
-              </li>
-              <li class="t_group_cur">
-                <span class="t_cur">00</span>
-              </li>
-              <li><a class="start_color">Start Color</a></li>
-              <li><a class="end_color">End Color</a></li>
-              <li><a>State:</a></li>
-              <li><a>Progress:</a></li>
-            </ul>
+    </a>
+  </div>
+  <div class="menu-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li>
+        <a class="reset_btn">
+          <span>Reset</span>
+          <span class="glyphicon glyphicon-off"></span>
+        </a>
+        
+      </li>
+      <li class="t_group_input">
+          <input  type="number" id="t_in" value="5" />
+        </li>
 
-
-
-
-            
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </div>
-
+    </ul>
+    <div class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav">
+        <li><a>Progress:</a></li>
+        <li class="t_group_cur">
+          <span class="t_cur">00</span>
+        </li>
+        <li><a class="start_color">Start Color</a></li>
+        <li><a class="end_color">End Color</a></li>
+        <li><a>State:<span class="state_label"></span></a></li>
+        
+      </ul>
+  	</div>
+  </div>
+</div>
+</nav>
 
 
 
 </div>
+    <div class="start_btn">Start</div>
+    <div class="pause_btn">Pause</div>
 </body>
+
+
 
 </html>

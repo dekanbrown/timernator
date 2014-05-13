@@ -122,42 +122,53 @@ ColorTimer = function (start_color, end_color) {
     
     //states
     this.initial_state = function () {
+        $('.state_label').html(' initial');
         $('body').css({'background-color' : this.start_color });
         $('.t_group_input').show();
         $('.t_group_cur').hide();
         $('.start_btn').show();
         $('.pause_btn').hide();
+        $('.settings_btn').hide();
         $('.reset_btn').hide();
         $('body').removeAttr('class');
         $('body').addClass('pattern_box');
 
     };
     this.paused_state = function () {
+        $('.state_label').html(' paused');
         $('.t_group_input').hide();
         $('.t_group_cur').show();
         $('.t_cur').html(this.cur_time);
         $('.start_btn').show();
         $('.pause_btn').hide();
+        $('.settings_btn').hide();
         $('.reset_btn').show();
         $('body').removeAttr('class');
+        $('.collapse').collapse('show')
 
     };
     this.ticking_state = function () {
+        $('.state_label').html(' ticking');
         $('.t_group_input').hide();
         $('.t_group_cur').hide();
         $('.start_btn').hide();
         $('.pause_btn').show();
+        $('.settings_btn').show();
         $('.reset_btn').show();
         $('body').removeAttr('class');
+        $('.collapse').collapse('hide')
 
     };
     this.expired_state = function () {
+        $('.state_label').html(' expired');
         $('.t_group_input').hide();
         $('.start_btn').hide();
         $('.pause_btn').hide();
+        $('.settings_btn').hide();
         $('.reset_btn').show();
         $('.t_group_cur').show();
         $('.t_cur').html('00');
+        $('.collapse').collapse('show')
         $('body').removeAttr('class');
         $('body').addClass('pattern_diag');
 
@@ -184,4 +195,9 @@ $( document ).ready(function() {
               console.log( "clicked reset" );
               obj.reset();
             });
+            $( ".settings_btn" ).on('click',function() {
+              console.log( "clicked reset" );
+              obj.pause();
+            });
+    $('.collapse').collapse('show')
 });
