@@ -144,7 +144,7 @@ ColorTimer = function (start_color, end_color) {
         $('.settings_btn').hide();
         $('.reset_btn').show();
         $('body').removeAttr('class');
-        $('.collapse').collapse('show')
+
 
     };
     this.ticking_state = function () {
@@ -156,7 +156,6 @@ ColorTimer = function (start_color, end_color) {
         $('.settings_btn').show();
         $('.reset_btn').show();
         $('body').removeAttr('class');
-        $('.collapse').collapse('hide')
 
     };
     this.expired_state = function () {
@@ -168,7 +167,6 @@ ColorTimer = function (start_color, end_color) {
         $('.reset_btn').show();
         $('.t_group_cur').show();
         $('.t_cur').html('00');
-        $('.collapse').collapse('show')
         $('body').removeAttr('class');
         $('body').addClass('pattern_diag');
 
@@ -199,5 +197,5 @@ $( document ).ready(function() {
               console.log( "clicked reset" );
               obj.pause();
             });
-    $('.collapse').collapse('show')
+
 });
