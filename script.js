@@ -201,12 +201,14 @@ $( document ).ready(function() {
         color: "#74B486",
         change: function(color) {
             obj.start_color = color;
+            obj.reset();
         }
     });
     $("#end_color").spectrum({
         color: "#FF0022",
         change: function(color) {
             obj.end_color = color;
+            obj.reset();
         }
     });
 
