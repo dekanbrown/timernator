@@ -1,20 +1,12 @@
-.pattern_diag {
-background:url(
-data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2NkQAX/GZH4/4FsRpgAmAOSBBFwDkgAAIKuBATRTAAZAAAAAElFTkSuQmCC
-   ) repeat;
+.trigger {
+background: none;
 }
-.pattern_box {
-background:url(
-data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAUElEQVQYV2NkYGAwBuKzQAwDID4IoIgxIikAMZE1oRiArBDdZBSNMIXoJiFbDZYDKcSmCOYimDuNSVKIzRNYrUYOFuQgweoZbIoxgoeoAAcAEckW11HVTfcAAAAASUVORK5CYII=
-   ) repeat;
+ul {
+padding: 10px;
 }
-
-
 .start_btn, .pause_btn {
-
-height :100%;
-
-
+height: 100%;
+margin-left: 100px;
 }
 
 

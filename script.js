@@ -30,7 +30,7 @@ ColorTimer = function (start_color, end_color) {
         });
         $('body').css({'background-color' : this.end_color });
     }
-    // Event: Tick
+    // timer tick checks for time up
     this.Tick = function () {
         this.cur_time -= 1;
         console.log(this.cur_time + ' cur');
@@ -43,7 +43,7 @@ ColorTimer = function (start_color, end_color) {
 
     }
 
-    // Function: Start the timer
+    // starts the timer
     this.start = function () {
         
         this_object = this;
@@ -76,7 +76,7 @@ ColorTimer = function (start_color, end_color) {
         
         
     };
-     //  expires
+     //  expires timer
     this.expire = function () {
         console.log('boom');
         this.expired_state();
@@ -86,7 +86,7 @@ ColorTimer = function (start_color, end_color) {
         clearInterval(timer_id);
         console.log('expire');
     };
-         // resets the timer
+    // resets the timer
     this.reset = function () {
         
         this.expire();
@@ -100,7 +100,7 @@ ColorTimer = function (start_color, end_color) {
         this.remove_transition(this.start_color);
         
     };
-     // Function: Pause the timer
+    // pauses the timer
     this.pause = function () {
         // if not ticking return false
         this.paused_state();
@@ -120,7 +120,7 @@ ColorTimer = function (start_color, end_color) {
         
     };
     
-    //states
+    // states
     this.initial_state = function () {
         $('.state_label').html(' initial');
         $('body').css({'background-color' : this.start_color });
@@ -180,22 +180,34 @@ $( document ).ready(function() {
     var obj = new ColorTimer('#74B486', '#FF0022');
     // set initial background color
     obj.initial_state()
-               //control buttons
-            $( ".start_btn" ).on('click',function() {
-              console.log( "clicked start" );
-              obj.start();
-            });
-            $( ".pause_btn" ).on('click',function() {
-              console.log( "clicked pause" );
-              obj.pause();
-            });
-            $( ".reset_btn" ).on('click',function() {
-              console.log( "clicked reset" );
-              obj.reset();
-            });
-            $( ".settings_btn" ).on('click',function() {
-              console.log( "clicked reset" );
-              obj.pause();
-            });
+    //control buttons
+    $( ".start_btn" ).on('click',function() {
+      console.log( "clicked start" );
+      obj.start();
+    });
+    $( ".pause_btn" ).on('click',function() {
+      console.log( "clicked pause" );
+      obj.pause();
+    });
+    $( ".reset_btn" ).on('click',function() {
+      console.log( "clicked reset" );
+      obj.reset();
+    });
+    $( ".settings_btn" ).on('click',function() {
+      console.log( "clicked reset" );
+      obj.pause();
+    });
+    $("#start_color").spectrum({
+        color: "#74B486",
+        change: function(color) {
+            obj.start_color = color;
+        }
+    });
+    $("#end_color").spectrum({
+        color: "#FF0022",
+        change: function(color) {
+            obj.end_color = color;
+        }
+    });
 
 });

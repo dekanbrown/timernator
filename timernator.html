@@ -5,35 +5,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src='spectrum.js'></script>
     <script src="script.js"></script>
+    
     <!--[if IE]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="../css/west.css">
-    <link rel="stylesheet" type="text/css" href="../css/lemonade.css">
-<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="http://dekan.doomdns.com/css/west.css">
+    <link rel="stylesheet" type="text/css" href="http://dekan.doomdns.com/css/lemonade.css">
+    <link rel='stylesheet' href='spectrum.css' />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="http://dekan.doomdns.com/css/dkn.css">
+
 </head>
 
 <body>
 <nav class="navWrap">
-    <button class="trigger">&#9776;</button>
+    <button class="trigger">&nbsp;</button>
     <ul class="mainList">
         <li>
-			<a class="settings_btn" type="button">
+            <a class="settings_btn" type="button">
             <span class="glyphicon glyphicon-align-justify"></span>
              </a>
         </li>
         <li>
-		<a class="reset_btn">
+        <a class="reset_btn">
           <span>Reset</span>
           <span class="glyphicon glyphicon-off"></span>
         </a>
         </li>
         <li><input  type="number" id="t_in" value="5" /></li>
         <li><a>Progress:</a></li>
-        <li><a class="start_color">Start Color</a></li>
-        <li><a class="end_color">End Color</a></li>
+        <li>Start Color: <input type='text' id="start_color" /></li>
+        <li>End Color: <input type='text' id="end_color" /></li>
         <li><a>State:<span class="state_label"></span></a></li>
+        <li class="blurb">
+			<p>Timernator is an experimental timer to get rid of the over stressful
+			countdown and replace it with a soothing color fade.  Watch the progress or
+			join the collaboration on github.
+        </p></li>
     </ul>
 </nav>
 
@@ -42,8 +52,7 @@
     <div class="start_btn">Start</div>
     <div class="pause_btn">Pause</div>
 
-
-    <script src="../js/west.js"></script>
+    <script src="http://dekan.doomdns.com/js/west.js"></script>
 
 </body>
 </html>
