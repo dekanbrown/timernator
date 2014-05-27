@@ -1,15 +1,16 @@
-.trigger {
-background: none;
+/* timernator */
+.pattern_diag {
+background:url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2NkQAX/GZH4/4FsRpgAmAOSBBFwDkgAAIKuBATRTAAZAAAAAElFTkSuQmCC
+   ) repeat;
 }
-ul {
-padding: 10px;
+.pattern_box {
+background:url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAUElEQVQYV2NkYGAwBuKzQAwDID4IoIgxIikAMZE1oRiArBDdZBSNMIXoJiFbDZYDKcSmCOYimDuNSVKIzRNYrUYOFuQgweoZbIoxgoeoAAcAEckW11HVTfcAAAAASUVORK5CYII=
+   ) repeat;
 }
 .start_btn, .pause_btn {
 height: 100%;
 margin-left: 100px;
+margin-left: 100px;
 }
-
-
-
-
-
